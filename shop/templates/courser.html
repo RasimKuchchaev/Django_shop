@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title%}All courses{%endblock title%}
+
+{% block content %}
+<table class="table mt-5 table-bordered table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Student Quantity</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cours in cousers %}
+        <tr>
+            <td>{{cours.title}}</td>
+            <td>{{cours.category}}</td>
+            <td>{{cours.price}}</td>
+            <td>{{cours.student_qty}}</td>
+            <td><button class="btn btn-primary">Buy</button></td>
+        </tr>
+        {% endfor %} 
+    </tbody>
+</table>
+{% endblock  %}
