@@ -6,17 +6,17 @@ from . import models
 def index(request):
     cousers = models.Course.objects.all()
     # return HttpResponse("".join([str(corser) + "<br>" for corser in cousers]))
-    return render(request, 'courser.html', context={'cousers': cousers})
+    return render(request, 'shop/courser.html', context={'cousers': cousers})
 
 
 def single_course(request, course_id):
  #   # option 1 404
  #   try:
  #       course = models.Course.objects.get(pk=course_id)
- #       return render(request, 'single_course.html', {'course': course})
+ #       return render(request, 'shop/single_course.html', {'course': course})
  #   except models.Course.DoesNotExist:
  #       raise Http404
 
     # option 2  404
     course = get_object_or_404(models.Course, pk=course_id)
-    return render(request, 'single_course.html', {'course': course})
+    return render(request, 'shop/single_course.html', {'course': course})
