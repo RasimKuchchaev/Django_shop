@@ -1,3 +1,5 @@
+Visual Code Linux
+
 source /.venv/bin/activate
 
 # new app

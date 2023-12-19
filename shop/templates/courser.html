@@ -16,7 +16,12 @@
     <tbody>
         {% for cours in cousers %}
         <tr>
-            <td>{{cours.title}}</td>
+            <td>
+            <!--<a href={{ cours.id}}>{{cours.title}}</a> -->
+            <!--<a href="/shop/{{ cours.id}}">{{cours.title}}</a> -->
+            <!-- <a href={\% url "single_course" cours.id %\}>{{cours.title}}</a>      <!-- # url-url.py  "single_course"-name_path  cours.id-argument -->
+            <a href={% url "shop:single_course" cours.id %}>{{cours.title}}</a>      <!-- # url-url.py  "single_course"-name_path  cours.id-argument -->
+            </td>
             <td>{{cours.category}}</td>
             <td>{{cours.price}}</td>
             <td>{{cours.student_qty}}</td>
